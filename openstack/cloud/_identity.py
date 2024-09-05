@@ -1276,9 +1276,11 @@ class IdentityCloudMixin(openstackcloud._OpenStackCloudMixin):
             raise exceptions.SDKException(f'Role {role} not found.')
 
         if user:
-            # use cloud.get_user to save us from bad searching by name
-            data['user'] = self.get_user(user, filters=search_args)
-        if group:
+	    data['user'] = self.identity.find_user(
+                user, ignore_missing=False, **search_args
+            )        
+
+	if group:
             data['group'] = self.identity.find_group(
                 group, ignore_missing=False, **search_args
             )

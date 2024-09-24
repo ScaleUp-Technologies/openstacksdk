@@ -1277,8 +1277,8 @@ class IdentityCloudMixin(openstackcloud._OpenStackCloudMixin):
 
         if user:
             data['user'] = self.identity.find_user(
-                user, ignore_missing=False, **search_args
-            )        
+              user, ignore_missing=False, **search_args
+            ) 
 
         if group:
             data['group'] = self.identity.find_group(

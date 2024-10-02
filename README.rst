@@ -17,6 +17,7 @@ configuration, then the Cloud Abstraction layer is for you.
 More information about the history of openstacksdk can be found at
 https://docs.openstack.org/openstacksdk/latest/contributor/history.html
 
+
 Getting started
 ---------------
 
